@@ -1,0 +1,1 @@
+This is a responsive school website designed to provide information to students, parents, and staff. The website features modern design elements, intuitive navigation, and mobile responsiveness to ensure accessibility across all devices.
