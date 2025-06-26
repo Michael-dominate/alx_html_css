@@ -1,0 +1,364 @@
+:root {
+  --primary-color: #ff5500;
+  --secondary-color: #333;
+  --text-color: #555;
+  --light-bg: #f9f9f9;
+  --dark-bg: #222;
+  --white: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  color: var(--text-color);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--dark-bg);
+  color: var(--white);
+  position: relative;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  transition: all 0.3s ease-in-out;
+  background-color: var(--white);
+}
+
+.top-buttons {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.top-buttons button {
+  background: none;
+  border: none;
+  color: var(--white);
+  cursor: pointer;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.top-buttons button:hover {
+  color: var(--primary-color);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+header {
+  text-align: center;
+  padding: 4rem 0;
+}
+
+header h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--secondary-color);
+}
+
+header nav {
+  margin-top: 2rem;
+}
+
+header nav a {
+  margin: 0 1rem;
+  text-decoration: none;
+  color: var(--primary-color);
+  font-weight: 500;
+}
+
+
+#what-we-do {
+  padding: 3rem 0;
+  text-align: center;
+  animation: fadeIn 1s ease-out;
+}
+
+#what-we-do h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--secondary-color);
+}
+
+#what-we-do p {
+  max-width: 800px;
+  margin: 0 auto;
+  animation: textFlow 8s infinite alternate;
+  position: relative;
+}
+
+
+#results {
+  padding: 4rem 0;
+  background-color: var(--light-bg);
+  text-align: center;
+}
+
+#results h2 {
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  color: var(--secondary-color);
+}
+
+.result-grid {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  perspective: 1000px;
+}
+
+.pentagon {
+  position: relative;
+  width: 180px;
+  height: 200px;
+  background: var(--primary-color);
+  clip-path: polygon(
+    50% 0%,
+    100% 38%,
+    82% 100%,
+    18% 100%,
+    0% 38%
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  animation: float 6s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.pentagon:hover {
+  animation: pulse 0.5s ease, float 6s ease-in-out infinite;
+  transform: scale(1.05) translateY(-10px);
+  filter: drop-shadow(0 5px 15px rgba(255, 85, 0, 0.4));
+}
+
+.result-content {
+  color: var(--white);
+  text-align: center;
+  padding: 20px;
+}
+
+.result-content h3 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.pentagon:hover .result-content h3 {
+  transform: scale(1.1);
+  text-shadow: 0 0 10px rgba(255,255,255,0.5);
+}
+
+
+#contact {
+  padding: 4rem 0;
+  text-align: center;
+}
+
+#contact h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--secondary-color);
+}
+
+.contact-form {
+  max-width: 500px;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-form input {
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.contact-form button {
+  padding: 1rem;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+  background-color: #e04b00;
+}
+
+.cta {
+  margin-top: 2rem;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background-color: var(--secondary-color);
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  margin-top: 1rem;
+  transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #444;
+}
+
+
+main section {
+  text-align: center;
+  padding: 4rem 0;
+  background-color: var(--dark-bg);
+  color: var(--white);
+}
+
+main section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+main section button {
+  padding: 0.8rem 1.5rem;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  margin-top: 1.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+main section button:hover {
+  background-color: #e04b00;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem 0;
+  background-color: var(--secondary-color);
+  color: var(--white);
+}
+
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes textFlow {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1.05); }
+}
+
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .top-buttons {
+    position: fixed;
+    left: -100%;
+    top: 70px;
+    gap: 0;
+    flex-direction: column;
+    background-color: var(--dark-bg);
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+    padding: 1rem 0;
+    z-index: 99;
+  }
+
+  .top-buttons.active {
+    left: 0;
+  }
+
+  .top-buttons button {
+    margin: 1rem 0;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  .result-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .pentagon {
+    width: 150px;
+    height: 170px;
+    animation: float 8s ease-in-out infinite;
+  }
+
+  #what-we-do p {
+    animation: none;
+  }
+}
